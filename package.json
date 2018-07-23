@@ -1,11 +1,18 @@
 {
+  "name": "electron-cafeteria",
+  "version": "1.0.1",
+  "main": "index.js",
+  "description": "electron-cafeteria example project",
+  "author": "hohee <boycat87@gmail.com>",
   "scripts": {
     "publish": "build --mac --win -p always",
     "//": "build -p always"
   },
   "dependencies": {
+    "cron": "^1.2.1",
     "electron-log": "^1.3.0",
-    "electron-updater": "^2.21.4"
+    "electron-updater": "^3.0.3",
+    "jquery": "^3.2.1"
   },
   "devDependencies": {
     "electron": "^1.7.9",
