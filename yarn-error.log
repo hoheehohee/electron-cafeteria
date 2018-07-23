@@ -1,40 +1,27 @@
 Arguments: 
-  /Users/yongho/.nvm/versions/node/v8.9.4/bin/node /Users/yongho/.nvm/versions/node/v8.9.4/bin/yarn add winCodeSign -D
+  /usr/local/bin/node /usr/local/bin/yarn install
 
 PATH: 
-  /Users/yongho/.nvm/versions/node/v8.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS:/usr/local/bin/nwjs/nwjs.app/Contents/MacOS:/usr/local/bin/nwjs/nwjs.app/Contents/MacOS
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS:/usr/local/bin/nwjs/nwjs.app/Contents/MacOS:/usr/local/bin/nwjs/nwjs.app/Contents/MacOS
 
 Yarn version: 
-  1.7.0
+  0.23.4
 
 Node version: 
-  8.9.4
+  7.1.0
 
 Platform: 
   darwin x64
 
-Trace: 
-  Error: https://registry.yarnpkg.com/winCodeSign: Not found
-      at Request.params.callback [as _callback] (/Users/yongho/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/lib/cli.js:65656:18)
-      at Request.self.callback (/Users/yongho/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/lib/cli.js:134675:22)
-      at emitTwo (events.js:126:13)
-      at Request.emit (events.js:214:7)
-      at Request.<anonymous> (/Users/yongho/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/lib/cli.js:135658:10)
-      at emitOne (events.js:116:13)
-      at Request.emit (events.js:211:7)
-      at IncomingMessage.<anonymous> (/Users/yongho/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/lib/cli.js:135578:12)
-      at Object.onceWrapper (events.js:313:30)
-      at emitNone (events.js:111:20)
-
 npm manifest: 
   {
     "name": "electron-cafeteria",
-    "version": "1.0.2",
+    "version": "1.0.1",
     "main": "index.js",
     "description": "electron-cafeteria example project",
     "author": "hohee <boycat87@gmail.com>",
     "scripts": {
-      "publish": "build --win -p always",
+      "publish": "build --mac --win -p always",
       "//": "build -p always"
     },
     "dependencies": {
@@ -54,7 +41,12 @@ npm manifest:
         "target": [
           "zip",
           "dmg"
-        ]
+        ],
+        "icon": "resources/osx/Apple.icns"
+      },
+      "win": {
+        "target": "nsis",
+        "icon": "resources/windows/ic_sik.ico"
       }
     }
   }
@@ -1914,3 +1906,12 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yauzl/-/yauzl-2.4.1.tgz#9528f442dab1b2284e58b4379bb194e22e0c4005"
     dependencies:
       fd-slicer "~1.0.1"
+
+Trace: 
+  TypeError: Cannot read property 'length' of undefined
+      at compareSortedArrays (/usr/local/lib/node_modules/yarn/lib/util/misc.js:78:31)
+      at InstallationIntegrityChecker._compareIntegrityFiles (/usr/local/lib/node_modules/yarn/lib/integrity-checker.js:177:58)
+      at /usr/local/lib/node_modules/yarn/lib/integrity-checker.js:227:35
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/node_modules/babel-runtime/helpers/asyncToGenerator.js:17:30)
+      at /usr/local/lib/node_modules/yarn/node_modules/babel-runtime/helpers/asyncToGenerator.js:28:13

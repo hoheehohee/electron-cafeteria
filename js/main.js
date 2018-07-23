@@ -1,5 +1,5 @@
 var $ = require("jquery");
-var config = require('config/config.info');
+var config = require('../config/config.info');
 var CronJob = require('cron').CronJob;
 
 var networkCheck = function () {
