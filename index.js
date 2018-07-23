@@ -15,7 +15,7 @@ function createWindow() {
 
   //index.html 로드
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, `index.html#v${app.getVersion()}`),
     protocol: 'file',
     slashes: true
   }));

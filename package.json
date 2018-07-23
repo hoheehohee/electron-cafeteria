@@ -1,5 +1,5 @@
 {
-  "name": "electron-cafeteria",
+  "name": "식권대장",
   "version": "1.0.0",
   "main": "index.js",
   "description": "electron-cafeteria example project",

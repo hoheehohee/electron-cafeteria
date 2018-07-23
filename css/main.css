@@ -13,10 +13,12 @@ html,body {
 
 }
 
-#messages {
+#version {
 	position: relative;
 	background: #ffffff;
 	height: 100px;
+	width: 90%;
+	float: right;
 }
 
 .end-box {
