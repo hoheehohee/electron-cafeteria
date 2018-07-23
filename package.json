@@ -1,0 +1,30 @@
+{
+  "name": "electron-cafeteria",
+  "version": "1.0.1",
+  "main": "./app/index.js",
+  "repository": "https://github.com/hoheehohee/electron-cafeteria.git",
+  "author": "hohee <boycat87@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "publish": "build --mac --win -p always",
+    "//": "build -p always"
+  },
+  "dependencies": {
+    "electron-log": "^2.2.16",
+    "electron-updater": "^3.0.3"
+  },
+  "devDependencies": {
+    "electron": "^2.0.5",
+    "electron-builder": "^20.22.0"
+  },
+  "build": {
+    "appId": "com/hoheehohee/electron-cafeteria",
+    "mac": {
+      "category": "vendys.cafeteria.window",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>식권대장</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="js/main.js"></script>
+
+</head>
+
+<body>
+  <div class="indicator"></div>
+  <iframe id="sikdae" class="trim full" tabindex="-1" src="https://cafeteria2.mealc.co.kr/"></iframe>
+  <!-- <iframe id="sikdae" class="trim full" tabindex="-1" src="https://store-cafeteria-stage.sikdae.com"></iframe> -->
+  <!-- <iframe id="sikdae" class="trim full" tabindex="-1" src="http://localhost:3000/"></iframe> -->
+  <div id="messages"></div>
+  <script>
+
+    // Listen for messages
+    const { ipcRenderer } = require('electron');
+    ipcRenderer.on('message', function (event, text) {
+      var container = document.getElementById('messages');
+      var message = document.createElement('div');
+      message.innerHTML = text;
+      container.appendChild(message);
+    })
+  </script>
+</body>
+
+</html>
