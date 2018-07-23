@@ -2,7 +2,7 @@ const log = require('electron-log');
 const { autoUpdater } = require("electron-updater");
 
 
-const appAutoUpdate = (isAutoUpdate) => {
+module.exports = (isAutoUpdate) => {
 
   //not auto update 
   if (!isAutoUpdate) return;
@@ -30,5 +30,3 @@ const appAutoUpdate = (isAutoUpdate) => {
   });
 
 }
-
-export default appAutoUpdate;
