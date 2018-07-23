@@ -9,9 +9,9 @@
     "jquery": "^3.2.1"
   },
   "build": {
-    "appId": "com.github.iffy.electronupdaterexample",
+    "appId": "com.hoheehohee.electron-cafeteria",
     "mac": {
-      "category": "your.app.category.type",
+      "category": "vendys.cafeteria.window",
       "target": [
         "zip",
         "dmg"
