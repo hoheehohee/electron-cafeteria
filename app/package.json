@@ -7,15 +7,5 @@
   "dependencies": {
     "cron": "^1.2.1",
     "jquery": "^3.2.1"
-  },
-  "build": {
-    "appId": "com.hoheehohee.electron-cafeteria",
-    "mac": {
-      "category": "vendys.cafeteria.window",
-      "target": [
-        "zip",
-        "dmg"
-      ]
-    }
   }
 }

@@ -10,5 +10,15 @@
   "devDependencies": {
     "electron": "^1.7.9",
     "electron-builder": "^20.8.2"
+  },
+  "build": {
+    "appId": "com.hoheehohee.electron-cafeteria",
+    "mac": {
+      "category": "vendys.cafeteria.window",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    }
   }
 }
