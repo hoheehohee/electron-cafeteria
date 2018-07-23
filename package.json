@@ -1,6 +1,6 @@
 {
   "name": "electron-cafeteria",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "main": "index.js",
   "description": "electron-cafeteria example project",
   "author": "hohee <boycat87@gmail.com>",
@@ -25,7 +25,12 @@
       "target": [
         "zip",
         "dmg"
-      ]
+      ],
+      "icon": "resources/osx/Apple.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "resources/windows/ic_sik.ico"
     }
   }
 }
