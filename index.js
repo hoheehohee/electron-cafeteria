@@ -6,6 +6,11 @@ const url = require('url');
 const isAutoUpdate = true;
 let win;
 
+function sendStatusToWindow(text) {
+  log.info(text);
+  win.webContents.send('message', text);
+}
+
 function createWindow() {
 
   //브라우저 창을 생성
@@ -32,7 +37,7 @@ function createWindow() {
   });
 }
 
-appAutoUpdate(isAutoUpdate);
+appAutoUpdate(isAutoUpdate, sendStatusToWindow);
 
 /*
   이 메세지는 Electron의 초기화가 끝나면 실행되며
