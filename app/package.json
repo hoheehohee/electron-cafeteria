@@ -7,5 +7,15 @@
   "dependencies": {
     "cron": "^1.2.1",
     "jquery": "^3.2.1"
+  },
+  "build": {
+    "appId": "com.github.iffy.electronupdaterexample",
+    "mac": {
+      "category": "your.app.category.type",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    }
   }
 }
