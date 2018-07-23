@@ -2,9 +2,8 @@
   "name": "electron-cafeteria",
   "version": "1.0.1",
   "main": "./app/index.js",
-  "repository": "https://github.com/hoheehohee/electron-cafeteria.git",
+  "description": "electron-cafeteria example project",
   "author": "hohee <boycat87@gmail.com>",
-  "license": "MIT",
   "scripts": {
     "publish": "build --mac --win -p always",
     "//": "build -p always"
@@ -18,7 +17,7 @@
     "electron-builder": "^20.8.2"
   },
   "build": {
-    "appId": "com/hoheehohee/electron-cafeteria",
+    "appId": "com.hoheehohee.electroncafeteria",
     "mac": {
       "category": "vendys.cafeteria.window",
       "target": [
