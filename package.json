@@ -1,6 +1,6 @@
 {
   "name": "식권대장",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "description": "electron-cafeteria example project",
   "author": "hohee <boycat87@gmail.com>",

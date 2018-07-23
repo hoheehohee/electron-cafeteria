@@ -13,7 +13,7 @@ html,body {
 
 }
 
-#version {
+#versionBox {
 	position: relative;
 	background: #ffffff;
 	height: 100px;

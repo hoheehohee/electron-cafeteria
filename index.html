@@ -13,7 +13,7 @@
   <iframe id="sikdae" class="trim full" tabindex="-1" src="https://cafeteria2.mealc.co.kr/"></iframe>
   <!-- <iframe id="sikdae" class="trim full" tabindex="-1" src="https://store-cafeteria-stage.sikdae.com"></iframe> -->
   <!-- <iframe id="sikdae" class="trim full" tabindex="-1" src="http://localhost:3000/"></iframe> -->
-  <div id="version">
+  <div id="versionBox">
     Current version: <span id="version">vX.Y.Z</span>
     <div id="messages"></div>
   </div>
@@ -22,6 +22,7 @@
     document.getElementById('version').innerText = version;
     // Listen for messages
     const { ipcRenderer } = require('electron');
+
     ipcRenderer.on('message', function (event, text) {
       var container = document.getElementById('messages');
       var message = document.createElement('div');
