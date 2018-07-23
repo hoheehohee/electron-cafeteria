@@ -1,8 +1,8 @@
 {
-  "name": "app",
-  "version": "1.0.0",
+  "name": "electron-cafeteria",
+  "version": "1.0.1",
   "main": "index.js",
-  "license": "MIT",
+  "description": "electron-cafeteria example project",
   "author": "hohee <boycat87@gmail.com>",
   "dependencies": {
     "cron": "^1.2.1",
