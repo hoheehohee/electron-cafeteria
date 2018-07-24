@@ -14,6 +14,7 @@ function sendStatusToWindow(text) {
 
 function createWindow() {
   log.info('#### createWindow: ')
+  log.info('#### createWindow: ')
   autoUpdater.checkForUpdatesAndNotify();
   //브라우저 창을 생성
   win = new BrowserWindow({
