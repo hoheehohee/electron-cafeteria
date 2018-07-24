@@ -7,6 +7,7 @@ const isAutoUpdate = true;
 let win;
 
 function sendStatusToWindow(text) {
+  console.log('##### text: ', text);
   log.info(text);
   win.webContents.send('message', text);
 }
