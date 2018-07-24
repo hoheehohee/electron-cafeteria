@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+const log = require('electron-log');
 const { autoUpdater } = require("electron-updater");
 // const appAutoUpdate = require('./js/autoUpdate');
 const path = require('path');
@@ -7,24 +8,18 @@ const isAutoUpdate = true;
 let win;
 
 function sendStatusToWindow(text) {
-  console.log('##### text: ', text);
   log.info(text);
   win.webContents.send('message', text);
 }
 
 function createWindow() {
-
+  log.info('#### createWindow: ')
+  autoUpdater.checkForUpdatesAndNotify();
   //브라우저 창을 생성
   win = new BrowserWindow({
     kiosk: true
   });
 
-  //index.html 로드
-  // win.loadURL(url.format({
-  //   pathname: path.join(__dirname, `index.html#v${app.getVersion()}`),
-  //   protocol: 'file',
-  //   slashes: true
-  // }));
   win.loadURL(`file://${__dirname}/index.html#v${app.getVersion()}`);
 
   //개발자 도구을 연다.
@@ -41,30 +36,30 @@ function createWindow() {
 
 //not auto update 
 autoUpdater.on('checking-for-update', () => {
-  console.log('##### contchecking-for-updateent: ');
+  log.info('#### contchecking-for-updateent: ');
   sendStatusToWindow('Checking for update...');
 });
 autoUpdater.on('update-available', (info) => {
-  console.log('#####: update-available : ', info);
+  log.info('####: update-available : ', info);
   sendStatusToWindow('Update available.');
 });
 autoUpdater.on('update-not-available', (info) => {
-  console.log('##### update-not-available: ', info)
+  log.info('#### update-not-available: ', info)
   sendStatusToWindow('Update not available.');
 });
 autoUpdater.on('error', (err) => {
-  console.log('##### error: ', error)
+  log.info('#### error: ', error)
   sendStatusToWindow('Error in auto-updater. ' + err);
 });
 autoUpdater.on('download-progress', (progressObj) => {
-  console.log('##### download-progress: ', progressObj)
+  log.info('#### download-progress: ', progressObj)
   let log_message = "Download speed: " + progressObj.bytesPerSecond;
   log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
   log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
   sendStatusToWindow(log_message);
 });
 autoUpdater.on('update-downloaded', (info) => {
-  console.log('##### update-downloaded: ', info)
+  log.info('#### update-downloaded: ', info)
   sendStatusToWindow('Update downloaded');
 });
 
@@ -81,7 +76,7 @@ app.on("ready", createWindow);
 // 즉시 업데이트를 다운로드 한 다름 앱이 종료 된다.
 //-------------------------------------------------------------------
 app.on('ready', function () {
-  console.log('##### 1: ', 1)
+  log.info('#### 1: ', 1)
   autoUpdater.checkForUpdatesAndNotify();
 });
 
