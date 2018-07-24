@@ -1,9 +1,9 @@
 {
-  "name": "electron-cafeteria",
-  "version": "1.0.1",
+  "name": "cafeteria",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
-  "description": "electron-cafeteria example project",
+  "description": "cafeteria example project",
   "author": "hohee <boycat87@gmail.com>",
   "scripts": {
     "publish": "build --mac --win -p always",
@@ -21,7 +21,7 @@
     "electron-builder": "^20.24.5"
   },
   "build": {
-    "appId": "com.hoheehohee.electron-cafeteria",
+    "appId": "com.hoheehohee.cafeteria",
     "productName": "식권대장",
     "mac": {
       "target": "dmg",
