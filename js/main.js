@@ -1,14 +1,14 @@
-var $ = require("jquery");
-var config = require('../config/config.info');
+// var $ = require("jquery");
+// var config = require('../config/config.info');
 var CronJob = require('cron').CronJob;
 
 var networkCheck = function () {
-  var paths = config.config_dev;
+  // var paths = config.config_dev;  
   // var paths = config.config_stage;
   // var paths = config.config_prod;
   $.ajax({
     type: 'get',
-    url: paths.api_host + '/check/v1/health',
+    url: 'https://n-store-api.mealc.co.kr/check/v1/health',
     success: function (res, state, xhr) {
 
       if (xhr.status == 200 && location.pathname.indexOf("/networkError.html") > 0) {

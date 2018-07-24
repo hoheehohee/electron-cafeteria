@@ -19,11 +19,12 @@ function createWindow() {
   });
 
   //index.html 로드
-  win.loadURL(url.format({
-    pathname: path.join(__dirname, `index.html#v${app.getVersion()}`),
-    protocol: 'file',
-    slashes: true
-  }));
+  // win.loadURL(url.format({
+  //   pathname: path.join(__dirname, `index.html#v${app.getVersion()}`),
+  //   protocol: 'file',
+  //   slashes: true
+  // }));
+  win.loadURL(`file://${__dirname}/index.html#v${app.getVersion()}`);
 
   //개발자 도구을 연다.
   win.webContents.openDevTools();
