@@ -40,24 +40,30 @@ function createWindow() {
 
 //not auto update 
 autoUpdater.on('checking-for-update', () => {
+  console.log('##### contchecking-for-updateent: ');
   sendStatusToWindow('Checking for update...');
 });
 autoUpdater.on('update-available', (info) => {
+  console.log('#####: update-available : ', info);
   sendStatusToWindow('Update available.');
 });
 autoUpdater.on('update-not-available', (info) => {
+  console.log('##### update-not-available: ', info)
   sendStatusToWindow('Update not available.');
 });
 autoUpdater.on('error', (err) => {
+  console.log('##### error: ', error)
   sendStatusToWindow('Error in auto-updater. ' + err);
 });
 autoUpdater.on('download-progress', (progressObj) => {
+  console.log('##### download-progress: ', progressObj)
   let log_message = "Download speed: " + progressObj.bytesPerSecond;
   log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
   log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
   sendStatusToWindow(log_message);
 });
 autoUpdater.on('update-downloaded', (info) => {
+  console.log('##### update-downloaded: ', info)
   sendStatusToWindow('Update downloaded');
 });
 
@@ -74,8 +80,10 @@ app.on("ready", createWindow);
 // 즉시 업데이트를 다운로드 한 다름 앱이 종료 된다.
 //-------------------------------------------------------------------
 app.on('ready', function () {
+  console.log('##### 1: ', 1)
   autoUpdater.checkForUpdatesAndNotify();
 });
+
 
 //모든 창이 닫히면 애플리케이션 종료.
 app.on("window-all-closed", () => {
