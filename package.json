@@ -14,7 +14,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "dev": "cross-env START_HOT=1 npm run start-renderer-dev",
     "start-main-dev": "cross-env HOT=1 NODE_ENV=development electron -r babel-register ./app/main.dev.js",
-    "start-renderer-dev": "cross-env NODE_ENV=development node --trace-warnings -r babel-register ./node_modules/webpack-dev-server/bin/webpack-dev-server --config config/webpack.config.dev.js"
+    "start-renderer-dev": "cross-env NODE_ENV=development node --trace-warnings -r babel-register ./node_modules/webpack-dev-server/bin/webpack-dev-server --config webpack.config.renderer.dev.js"
   },
   "dependencies": {
     "ajv": "^6.5.2",
