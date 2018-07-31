@@ -7,7 +7,8 @@
   "author": "hohee <boycat87@gmail.com>",
   "scripts": {
     "publish": "build --mac --win -p always",
-    "build": "build --mac -p always"
+    "build": "build --mac -p always",
+    "start": "electron ."
   },
   "dependencies": {
     "ajv": "^6.5.2",
@@ -18,7 +19,11 @@
   },
   "devDependencies": {
     "electron": "^2.0.5",
-    "electron-builder": "^20.24.5"
+    "electron-builder": "^20.24.5",
+    "eslint-config-airbnb": "^17.0.0",
+    "react-app": "^1.1.2",
+    "stylelint-scss": "^3.2.0",
+    "stylelint-selector-bem-pattern": "^2.0.0"
   },
   "build": {
     "appId": "com.hoheehohee.cafeteria",

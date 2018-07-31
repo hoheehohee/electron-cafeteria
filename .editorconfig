@@ -1,0 +1,34 @@
+# top-most EditorConfig file
+# 최상의 파일
+root = true
+
+# Unix-style newlines with a newline ending every file
+
+# 모든 문자열 검색
+[*]
+# 문자 타입 latin1, utf-8, utf-8-bom, urf-16be, utf-16le
+charset = utf-8
+# lf, cr 또는 crlf 줄 바꿈이 표시되는 방법을 제어
+end_of_line = lf
+# 파일을 저장할 때 줄 바꿈으로 끝나는지 확인 (true), 그렇지 않으면 (false)
+# insert_final_newline = true
+# 들여쓰기 설정
+indent_size = 2
+# tab 또는 space로 들여쓰기 style 설정
+indent_style = space
+# indent_style = tab
+# tab_width = 2
+# 파일을 저장할 때 줄 바꿈으로 끝나는지 확인(true), 그렇지 않으면 (false)
+insert_final_newline = true
+
+# 한줄 최대 length 수
+# https://github.com/editorconfig/editorconfig/issues/280 이유로 적용 이 안됨
+# max_line_length = 80
+
+# 개행 문자 앞에 공백 문자를 제거(true), 그렇지 않으면 (false)
+trim_trailing_whitespace = true
+
+# .md 확장자
+[*.md]
+max_line_length = 0
+trim_trailing_whitespace = false
