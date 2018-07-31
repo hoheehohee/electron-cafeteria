@@ -1,3 +1,4 @@
+const autoprefixer = require('autoprefixer');
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
@@ -28,7 +29,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -46,39 +47,42 @@ module.exports = {
         }
       },
       {
-        test: /\.global\.css$/,
+        test: /\.css$/,
         use: [
+          require.resolve('style-loader'),
           {
-            loader: 'style-loader'
+            loader: require.resolve('css-loader'),
+            options: {
+              importLoaders: 1,
+            },
           },
           {
-            loader: 'css-loader',
+            loader: require.resolve('postcss-loader'),
             options: {
-              sourceMap: true
-            }
-          }
-        ]
-      },
-      {
-        test: /^((?!\.global).)*\.css$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
+              ident: 'postcss',
+              plugins: () => [
+                require('postcss-flexbugs-fixes'),
+                autoprefixer({
+                  browsers: [
+                    '>1%',
+                    'last 4 versions',
+                    'Firefox ESR',
+                    'not ie < 9', // React doesn't support IE8 anyway
+                  ],
+                  flexbox: 'no-2009',
+                }),
+              ],
               modules: true,
               sourceMap: true,
               importLoaders: 1,
               localIdentName: '[name]__[local]__[hash:base64:5]'
-            }
-          }
+            },
+          },
         ]
       },
       // SASS support - compile all .global.scss files and pipe it to style.css
       {
-        test: /\.global\.(scss|sass)$/,
+        test: /\.scss|sass$/,
         use: [
           {
             loader: 'style-loader'
@@ -96,7 +100,7 @@ module.exports = {
       },
       // SASS support - compile all other .scss files and pipe it to style.css
       {
-        test: /^((?!\.global).)*\.(scss|sass)$/,
+        test: /\.scss|sass$/,
         use: [
           {
             loader: 'style-loader'
